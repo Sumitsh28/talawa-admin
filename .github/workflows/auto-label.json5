@@ -3,7 +3,11 @@
     dependencies: ['dependabot', 'dependency', 'dependencies'],
     security: ['security'],
     ui/ux: ['layout', 'screen', 'design', 'figma'],
-    good first issue: ['dependabot', 'dependency', 'dependencies', 'security', 'layout', 'screen', 'design', 'figma']
+    goodFirstIssue: [] 
   },
-  defaultLabels: ['unapproved']
+  defaultLabels: ['unapproved'],
+  assignWhen: {
+    goodFirstIssue: ['dependencies', 'security', 'ui/ux']  
+  }
 }
+

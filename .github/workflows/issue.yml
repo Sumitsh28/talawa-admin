@@ -19,15 +19,18 @@ jobs:
     name: Adding Issue Label
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            .github/workflows/auto-label.json5
+            # .github/workflows/auto-label.jsonc
+            # .github/workflows/auto-label.json
+          sparse-checkout-cone-mode: false
       - uses: Renato66/auto-label@v2.3.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           ignore-comments: true
-          default-labels: '["unapproved"]'
-          labels: |
-            dependencies,security,good first issue: dependabot,dependency,dependencies
-            security,good first issue: security
-            ui/ux,good first issue: layout,screen,design,figma
+         
 
   Issue-Greeting:
     name: Greeting Message to User
